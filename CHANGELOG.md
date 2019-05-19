@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.0.2](https://github.com/bodgit/puppet-wordpress/tree/v1.0.2) (2019-05-19)
+[Full Changelog](https://github.com/bodgit/puppet-wordpress/compare/v1.0.1...v1.0.2)
+
+**Fixed bugs:**
+
+- PHP XML extension needed for importer to work [\#4](https://github.com/bodgit/puppet-wordpress/issues/4)
+
 ## [v1.0.1](https://github.com/bodgit/puppet-wordpress/tree/v1.0.1) (2019-05-19)
 [Full Changelog](https://github.com/bodgit/puppet-wordpress/compare/v1.0.0...v1.0.1)
 
