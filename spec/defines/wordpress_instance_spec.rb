@@ -31,7 +31,7 @@ describe 'wordpress::instance' do
         end
 
         it { is_expected.to compile.with_all_deps }
-        it { is_expected.to contain_archive('/tmp/latest.tar.gz') }
+        it { is_expected.to contain_archive('/srv/test/latest.tar.gz') }
         it { is_expected.to contain_exec('restorecon -R /srv/test') }
         it { is_expected.to contain_file('/srv/test') }
         it { is_expected.to contain_file('/srv/test/wp-config.php') }

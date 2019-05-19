@@ -71,7 +71,7 @@ define wordpress::instance (
       subscribe   => [
         ::Selinux::Fcontext["${docroot}(/.*)?"],
         File[$docroot],
-        Archive["/tmp/${filename}"],
+        Archive["${docroot}/${filename}"],
         File["${docroot}/wp-config.php"],
       ],
     }
@@ -85,8 +85,8 @@ define wordpress::instance (
     recurse => true,
   }
 
-  archive { "/tmp/${filename}":
-    path            => "/tmp/${filename}",
+  archive { "${docroot}/${filename}":
+    path            => "${docroot}/${filename}",
     source          => "https://wordpress.org/${filename}",
     checksum_type   => 'sha1',
     checksum_url    => "https://wordpress.org/${filename}.sha1",
@@ -105,7 +105,7 @@ define wordpress::instance (
     group   => $group,
     mode    => '0644',
     content => template("${module_name}/wp-config.php.erb"),
-    require => Archive["/tmp/${filename}"],
+    require => Archive["${docroot}/${filename}"],
   }
 
   ::mysql::db { $db_name:
