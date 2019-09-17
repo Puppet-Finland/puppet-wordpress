@@ -9,6 +9,7 @@
 #
 # @since 1.0.0
 class wordpress (
+  Boolean                         $manage_php = true,
   Hash[String, Hash[String, Any]] $instances = {},
 ) {
 

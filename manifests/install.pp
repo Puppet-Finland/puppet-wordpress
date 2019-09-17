@@ -1,6 +1,8 @@
 # @!visibility private
 class wordpress::install {
 
-  include ::php::extension::mysql
-  include ::php::extension::xml
+  if $::wordpress::manage_php {
+    include ::php::extension::mysql
+    include ::php::extension::xml
+  }
 }
